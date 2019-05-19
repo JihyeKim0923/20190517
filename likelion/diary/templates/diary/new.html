@@ -1,0 +1,17 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home'%}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="{% url 'new'%}">New</li>
+        </ol>
+    </nav>
+
+    <h1>글쓰기</h1>
+    <form method ="POSt">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type= "submit">저장</button>
+    </form>
+{% endblock %}
